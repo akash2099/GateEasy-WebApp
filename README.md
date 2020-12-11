@@ -1,7 +1,7 @@
-# GateEasy
+# GateEasy :tophat:
 ### An online platform for gate aspirants.
 
-# FEATURES
+# FEATURES :fire:
 - Syllabus
 - Notes
 - Past Question Papers
@@ -9,7 +9,7 @@
 - Video Lectures
 - Online Mock Tests
 
-# FOLDER STRUCTURE
+# FOLDER STRUCTURE :open_file_folder:
 
 ## [Pages](https://github.com/akash2099/GateEasy/tree/main/Pages)
 
