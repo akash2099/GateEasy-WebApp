@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+
+
+
+    <head>
+        <meta charset= "utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>GATE Mechanical</title>
+    </head>
+<style type="text/css">
+  a {color: rgb(255, 255, 255);
+        text-decoration:none;}
+  h1{
+			font-size: 28px;
+            color: #191275;
+		}
+
+  h3{
+      font-size: 17px;
+      font-weight: normal;
+  }
+  hr{
+    width: 70%;
+    height:3px;
+    float: left;
+    background-color: rgb(25, 0, 255);
+    margin-top: 2px;
+    border: none;
+    margin-bottom: 30px;
+  }
+  body{
+        margin: 0;
+        font-family: "Arial", "Helvetica", sans-serif;
+        background-color: #ffffff;
+
+
+       
+      }
+  header{
+    
+  }
+  #myTopnav{
+    width: 100%;
+    z-index: 30;
+  }
+  .topnav{
+          overflow: hidden;
+          background-color: #f1e7ff;
+          top: 0;
+          width: 100;
+          z-index: 30;
+          border-bottom-style: solid;
+          border-width: 1px;
+          border-color: #7b00ce;
+        }
+  .topnav a:hover{
+                  background-color: rgb(250, 191, 255);
+                  color: black
+                 }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #5b0185;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .active {
+    background-color: #b9adff;
+    color: white;
+  }
+
+
+
+  .topnav .icon {
+    display: none;
+  }
+
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 17px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 100%;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #daa3ff;
+    color: white;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .topnav .search-container {
+                float: right;
+            }
+  .topnav input[type=text] {
+
+    padding: 6px;
+   
+    font-size: 12px;
+    border: none;
+  }
+
+  @media screen and (max-width: 700px) {
+      .topnav .search-container {
+        float: none;
+      }
+  }
+
+
+  @media screen and (max-width: 700px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  }
+
+.sidebar{
+   float: left;
+   width: 20%;
+   top:0;
+   left: 0;
+   bottom: 0;
+   background-color: #5900ce;
+   height: 90vh;
+   overflow-x: hidden;
+   overflow-y: scroll;
+   transition: .3s;
+
+}
+.sidebar::-webkit-scrollbar{ 
+    display: none;
+    }
+.sidebar h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.sidebar hr{
+    width: 90%;
+    height: 2px;
+    background-color: #ccc;
+    margin-left: 5%;
+}
+.sidebar a{
+   display: block;
+   padding: 5vh 25px 9vh;
+   color: rgb(255, 255, 255);
+   text-decoration: none;
+   font-family: "Rubik";
+   letter-spacing: 2px;
+   text-align: right;
+}
+
+.sidebar a:hover{
+   color: #fff;
+   background-color: #ac00fc;
+   transition: 0.4s;
+}
+.hamburger{
+   display: none;
+}
+.sidebar .icon{
+  display: none;
+}
+@media screen and (max-width: 900px){
+   .title{
+      display: none;
+   }
+   .sidebar .icon{
+     display: block;
+   }
+   .sidebar h1{
+      display: none;
+   }
+   .sidebar hr{
+     display: none;
+   }
+   .hamburger{
+      display: block;
+   }
+   .wrapper.expand .sidebar{
+  width: 90%;
+  position: absolute;
+  margin-top: 48px;
+  z-index: 20;
+}
+.wrapper.expand .sidebar .title{
+  display: block;
+  text-align: left;
+}
+.wrapper.expand .sidebar .icon{
+  display: none;
+}
+.page.stop {
+  overflow: hidden;
+}
+body.stop2 {
+  overflow: hidden;
+}
+}
+
+
+/*.page{
+    background-color: #f3f3f3;
+    position: relative;
+    margin-left: auto;
+    width: 78%;
+    margin-right: 1%;
+    max-height: 90vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 4px 10px 0 rgba(0,0,0,0.2)
+}*/
+
+.pg_content{
+    padding: 50px;
+    animation: fadeIn ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forward
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.collapsible {
+  background-color: rgb(57, 33, 165);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-top: 5px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+}
+
+.activecol, .collapsible:hover {
+  background-color: rgb(73, 11, 92);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.activecol:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px .1px rgba(0,0,0,0.2);
+}
+.shadowpage{
+padding: 1.5%;
+margin-left: 2%;
+margin-right: 2%;
+padding-top: 50px;
+padding-bottom: 50px;
+display: inline-block;
+width:96%;
+background-color: #ffffff;
+border-radius: 7px;
+box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+}
+.main{
+   overflow-x: scroll;
+    overflow-y: hidden;
+   white-space: nowrap; 
+
+  }
+  .main::-webkit-scrollbar{ 
+    display: none;
+    }
+
+  .card{
+     width: 20%;
+     display: inline-block;
+     box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+     margin: 2%;
+     margin-bottom: 10px;
+    }
+
+  .image img{
+  width: 100%;
+  }
+
+  .title{
+
+    text-align: center;
+    padding: 10px;
+
+  }
+  .title h1{
+      font-size: 17px;;
+  }
+
+  @media screen and (max-width: 1000px) {
+          .card {
+            width: 40%;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .main {
+            width: 100%;
+          }
+          .card{
+              width: 200px;
+          }
+        }
+        footer{
+    
+    background-color: #1c005c;
+    display: block;
+    width: 100%
+  }
+    inner-footer{
+     width: 95%;
+     margin: auto;
+     padding: 30px 10px;
+     display: flex;
+     flex-wrap: wrap;
+     box-sizing: border-box;
+     justify-content: center;
+  }
+  .footer-items{
+    display: inline-flex;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  .footer-items h1{
+    font-size: 50px;
+    color: rgb(163, 147, 199);
+    text-transform: uppercase; 
+  }
+  .footer-items h2{
+
+    text-align: center;
+    color: gray;
+    font-size: 16px;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  .border{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+
+  }
+
+  ul{
+    list-style: none;
+    color: #fff;
+    font-size: 15px;
+  
+    
+  }
+  ul a{
+    text-decoration: none;
+    outline: none;
+    color: none;
+    transition: 0.3s;
+
+  }
+  ul a:hover{
+    color: #ff9800;
+  }
+
+  ul li{
+    margin: 10px;
+    height: 25px;
+    position: relative;
+  }
+  li i{
+    margin-right: 20px;
+    text-align: center;
+  }
+  .social a{
+    text-decoration: none;
+    float: right;
+  }
+  .social i{
+    height: 15px;
+    width: 15px;
+    margin: 20px 5px;
+    padding:  10px;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid gray;
+    transition: 0.3s;
+
+  } 
+  .social i:hover{
+    background: gray;
+
+  }
+  .footer-bottom{
+    padding: 20px;
+    background: #3b335a;
+    color: #fff;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 1085px){
+    .footer-items{
+      width: 100%;
+    }
+  }
+ @media screen and (max-width: 600px){
+    .footer-items{
+      width: 100%;
+    }
+  }
+    /*.tutorial-popup{
+  display: none; 
+  position: fixed;
+  z-index: 1; /* Sit o
+  padding-top: 100px; /* Location of the box
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width 
+  height: 100%; /* Full height 
+  overflow: scroll; /* Enable scroll if needed 
+  background-color: rgb(0,0,0); /* Fallback color 
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
+}*/
+   /* .tutorial-popup2{
+  display: none; /* Hidden by default 
+  position: fixed; /* Stay in place 
+  z-index: 1; /* Sit on top 
+  padding-top: 100px; /* Location of the box 
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width 
+  height: 100%; /* Full height 
+  overflow: scroll; /* Enable scroll if needed 
+  background-color: rgb(0,0,0); /* Fallback color 
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
+}*/
+   /* .tutorial-popup3{
+  display: none; /* Hidden by default 
+  position: fixed; /* Stay in place 
+  z-index: 1; /* Sit on top 
+  padding-top: 100px; /* Location of the box 
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width 
+  height: 100%; /* Full height 
+  overflow: scroll; /* Enable scroll if needed 
+  background-color: rgb(0,0,0); /* Fallback color 
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
+}*/
+    /*.tutorial-popup4{
+  display: none; /* Hidden by default 
+  position: fixed; /* Stay in place 
+  z-index: 1; /* Sit on top 
+  padding-top: 100px; /* Location of the box 
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width 
+  height: 100%; /* Full height 
+  overflow: scroll; /* Enable scroll if needed 
+  background-color: rgb(0,0,0); /* Fallback color 
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
+}*/
+
+  /*.tutorial-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+    .tutorial-content2 {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+      .tutorial-content3 {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+      .tutorial-content4 {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+
+  @-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+  }
+
+  @keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+  } 
+          .tutorial-header{
+        padding: 2px 16px;
+        background-color: #736dc9;
+        color: black;
+
+
+      }
+      .tutorial-body{
+        position: relative;
+        padding:25px ;
+        
+        
+      }*/
+      .videoContainer{
+       position: relative;
+      width: 560px;
+      
+      height: 316px;
+      margin: auto;
+      }
+      .videoContainer iframe{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+       /*         .tutorial-header2{
+        padding: 2px 16px;
+        background-color: #736dc9;
+        color: black;
+
+
+      }
+      .tutorial-body2{
+        position: relative;
+        padding:25px ;
+        
+        
+      }
+      .videoContainer2{
+       position: relative;
+      width: 560px;
+      
+      height: 316px;
+      margin: auto;
+      }
+      .videoContainer2 iframe{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+                .tutorial-header3{
+        padding: 2px 16px;
+        background-color: #736dc9;
+        color: black;
+
+
+      }
+      .tutorial-body3{
+        position: relative;
+        padding:25px ;
+        
+        
+      }
+      .videoContainer3{
+       position: relative;
+      width: 560px;
+      
+      height: 316px;
+      margin: auto;
+      }
+      .videoContainer3 iframe{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+                .tutorial-header4{
+        padding: 2px 16px;
+        background-color: #736dc9;
+        color: black;
+
+
+      }
+      .tutorial-body4{
+        position: relative;
+        padding:25px ;
+        
+        
+      }
+      .videoContainer4{
+       position: relative;
+      width: 560px;
+      
+      height: 316px;
+      margin: auto;
+      }
+      .videoContainer4 iframe{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+
+          .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+                .close2 {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close2:hover,
+      .close2:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+       .close3 {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close3:hover,
+      .close3:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+        .close4 {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close4:hover,
+      .close4:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }*/
+
+@media screen  and (max-width: 750px){
+  .videoContainer{
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+}
+/*@media screen  and (max-width: 750px){
+  .videoContainer2{
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+}
+@media screen  and (max-width: 750px){
+  .videoContainer3{
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+}
+@media screen  and (max-width: 750px){
+  .videoContainer4{
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+}*/
+  
+
+  </style> 
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>     
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <a>GATE CLASSES</a>
+            <a href="mechanical.html">Home</a>
+           <a  class="active" href="#VideoLectures">Video Lectures</a>
+           <a href="mechanical.html#syllabus">Syllabus</a>
+           <a  href="mechanical.html#Notes">Notes</a>
+           <a  href="mechanical.html#Books">Books</a>
+           <a  href="mechanical.html#Questions">Questions</a>
+           <a  href="mechanical.html#Contact">Contact</a>
+           <a  href="mechanical.html#MockTest">Mock Test</a>
+           <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        
+    </header>
+    <div class="wrapper">
+      <!--
+    <div class="sidebar">
+      <div class="hamburger"><a href="javascript:void(0);" style="font-size:15px;" class="icon2" onclick="myFunction2()">&#9776;</a></div>
+        <h1>Video Lectures</h1>
+        <hr><br>
+        <a onclick="openTab('em')" href="#em"><span class="icon"><i class="fas fa-calculator"></i></span><span class="title">Engineering Mathematics</span></a>
+        <a onclick="openTab('amd')" href="#amd"><span class="icon"><i class="fas fa-book"></i></span><span class="title">Applied Mechanics and Design</span></a>
+        <a onclick="openTab('fmt')" href="#fmt"><span class="icon"><i class="fas fa-book-open"></i></span><span class="title">Fluid Mechanics and Thermal Sciences</span></a>
+        <a onclick="openTab('mmie')" href="#mmie"><span class="icon"><i class="fas fa-book-reader"></i></span><span class="title">Materials, Manufacturng and Industrial Engineering</span></a>
+     </div>
+    </div>
+    -->
+   <!-- <div class="page" id="em">-->
+     
+        <div class="pg_content">
+          <div>
+                <h1>Mechanical Engineering
+                </h1>
+                <hr>
+                <br>
+                <h3>Browse through the video lessons:</h3>
+                <button class="collapsible">Engineering Mathematics-I</button>
+                <div class="content">
+                    <div>
+                      <div class="main" id="myTutorial">
+                        <div class="videoContainer">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLbRMhDVUMngeVrxtbBz-n8HvP8KAWBpI5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                      </div>
+                </div>
+                </div>
+                <button class="collapsible">Kinematics of Machines</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial" >
+                          <div class="videoContainer">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLBEA57F7E7560C8E8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+              
+                <button class="collapsible">Dynamics of Machines</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">
+                          <div class="videoContainer">
+
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL46AAEDA6ABAFCA78" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                          </div>
+      
+
+                    </div>
+                    </div>
+                </div>
+                <button class="collapsible">Strength of Materials</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">                          
+                          <div class="videoContainer">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL521D094C8752CE67" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+
+
+                    </div>
+                    </div>
+                </div>
+                <button class="collapsible">Fluid Mechanics</button>
+                <div class="content">
+                <div>
+                    <div class="main" id="myTutorial">
+                      <div class="videoContainer">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLbMVogVj5nJTZJHsH6uLCO00I-ffGyBEm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                      </div>
+
+
+
+                    </div>
+                 </div>
+                </div>
+    
+                <button class="collapsible">Thermal Science (Powerplant Engineering)</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">
+                          <div class="videoContainer">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLy_2iUCG87BT8H9uMufjrcPF5e6Qd2bz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+                </div>      
+                <button class="collapsible">Basic Thermodynamics</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">
+                          <div class="videoContainer">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLD8E646BAB3366BC8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>    
+                </div>
+                <button class="collapsible">Heat and Mass Transfer</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">
+                          <div class="videoContainer">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL5F4F46C1983C6785" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>  
+                </div>  
+                <button class="collapsible">Fundementals of Manufacturing Process</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">
+                          <div class="videoContainer">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLSGws_74K01-g9nnTMBssGURHawYYQfMQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+                        </div>
+                    </div>
+                </div> 
+                </div>   
+                <button class="collapsible">Principle of Industrial Engineering</button>
+                <div class="content">
+                    <div>
+                        <div class="main" id="myTutorial">
+                          <div class="videoContainer">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLy_2iUCG87D5n9zraFS2QYajk0OAOlVK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>      
+            </div>
+        </div>  
+    </div>
+     </div>
+
+    <footer>
+      <div class="inner-footer">
+        <div class="footer-items">
+          <h1> GATE 2021</h1>
+        </div>
+        <div class="footer-items">
+           
+           <div class="border">
+             <ul>
+              <h2>Quick Links</h2>
+              <li><a href="#Heading">Back to Top</a></li>
+               <li><a href="">Home</a></li>
+               <li><a href="">About Us</a></li>
+               <li><a href="">Contact us</a></li>
+               <li><a href="">Webteam</a></li>
+               <li><a href="">Student Feedback</a></li>
+             </ul>
+           </div>
+        </div> 
+          <div class="footer-items">
+           
+           <div class="border">
+             <ul>
+              <h2>Departments</h2>
+               <li><a href="">Biotechnology</a></li>
+               <li><a href="">Civil</a></li>
+               <li><a href="">Chemical </a></li>
+               <li><a href="">Computer Science</a></li>
+               <li><a href="">Electrical</a></li>
+               <li><a href="">Electronics and Communications</a></li>
+               <li><a href="">Mechanical</a></li>
+               <li><a href="">Metallurgy and Materials</a></li>
+             </ul>
+           </div>
+        </div>
+          <div class="footer-items">
+           
+           <div class="border">
+             <ul>
+              <h2>Resources</h2>
+               <li><a href="">Books</a></li>
+               <li><a href="">Lecture Notes</a></li>
+               <li><a href="">Previous Question Papers</a></li>
+             </ul>
+           </div>
+        </div>
+        <div class="social">
+          <a href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
+              
+          <a href=""><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+              
+          <a href=""><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        </div>             
+      </div>
+      <div class="footer-bottom">
+        <p> Last updated: 2020-07-14</p>
+        Copyright: &copy; abc.in All rights reserved
+      </div>
+    </footer>
+       
+        <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+
+}
+function openTab(tabName) {
+  var i;
+  var y = document.getElementsByClassName("page");
+  for (i = 0; i < y.length; i++) {
+    y[i].style.display = "none";  
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+var coll = document.getElementsByClassName("collapsible");
+var j;
+var k= document.getElementById('myTutorial');
+for (j = 0; j < coll.length; j++) {
+  coll[j].addEventListener("click", function() {
+    this.classList.toggle("activecol");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null; 
+      stopVideo(k);  
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  }); 
+}
+function stopVideo(k1) {
+  var currentIframe = k1.querySelector('.videoContainer > iframe');
+  currentIframe.src = currentIframe.src;
+}    
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var hiding = false;
+  var height = $('#myTopnav').outerHeight();//the certain pixel
+  $(document).scroll(function(){
+    var scroll = $(document).scrollTop();
+    if (scroll >height){
+     $('#myTopnav').css({'position':'fixed','top':'0','left':'0'}, 300);
+      if(hiding == false){
+      $('#myTopnav').css('display','none');
+      $('#myTopnav').slideDown();
+        hiding= true;
+      } } else if(scroll <height) {
+        $('#myTopnav').css('position','relative');
+        hiding = false;
+      }
+  });
+});
+
+  $(".hamburger").click(function(){
+   $(".wrapper").toggleClass("expand");
+   $(".page").toggleClass("stop");
+   $("body").toggleClass("stop2");
+});   
+
+</script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+</body>
+</html>
+

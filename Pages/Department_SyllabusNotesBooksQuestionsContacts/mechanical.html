@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>GATE Mechanical</title>
+</head>
+<style type="text/css">
+    a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    
+    h1 {
+        font-size: 15px;
+        margin: 12px;
+    }
+    
+    h3 {
+        font-size: 17px;
+    }
+    
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        font: 1em sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        color: #191275;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    
+    hr {
+        width: 30%;
+        height: 3px;
+        background-color: rgb(25, 0, 255);
+        margin-top: 2px;
+        border: none;
+    }
+    
+    body {
+        margin: 0;
+        font-family: "Arial", "Helvetica", sans-serif;
+        background-color: #d6d6d6;
+    }
+    
+    header {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.2)
+    }
+    
+    #myTopnav {
+        width: 100%;
+        z-index: 1;
+    }
+    
+    .topnav {
+        overflow: hidden;
+        background-color:#f1e7ff;
+        top: 0;
+        width: 100;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: #7b00ce;
+    }
+    
+    .topnav a:hover {
+        background-color: rgb(250, 191, 255);
+        color: black
+    }
+    
+    .topnav a {
+        float: left;
+        display: block;
+        color: #5b0185;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .active {
+        background-color: #b9adff;
+        color: white;
+    }
+    
+    .topnav .icon {
+        display: none;
+    }
+    
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 17px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        width: 100%;
+    }
+    
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .topnav a:hover,
+    .dropdown:hover .dropbtn {
+        background-color:#daa3ff;
+        color: white;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .topnav .search-container {
+        float: right;
+    }
+    
+    .topnav input[type=text] {
+        padding: 6px;
+        font-size: 12px;
+        border: none;
+    }
+    
+    .topnav .search-container button {
+        float: auto;
+        padding: 6px 10px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .topnav .search-container:hover {
+        background: #ccc;
+    }
+    
+    @media screen and (max-width: 700px) {
+        .topnav .search-container {
+            float: none;
+        }
+    }
+    
+    @media screen and (max-width: 700px) {
+        .topnav a:not(:first-child),
+        .dropdown .dropbtn {
+            display: none;
+        }
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+    
+    @media screen and (max-width: 700px) {
+        .topnav.responsive {
+            position: relative;
+        }
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .topnav.responsive .dropdown {
+            float: none;
+        }
+        .topnav.responsive .dropdown-content {
+            position: relative;
+        }
+        .topnav.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+    }
+    
+    
+    
+    .heading {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2vw;
+        padding-bottom: 30px;
+        padding-top: 25px;
+        background: linear-gradient(to right, #7b00ce, #2e00fc);
+        color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    @media screen and (max-width: 700px) {
+        .heading{
+            font-size: 5vw;
+        }
+    }
+    
+    #page {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.2)
+    }
+    
+    .page {
+        background-color: #f3f3f3;
+        margin-top: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        display: inline-block;
+    }
+    
+    .bar {
+        background-color:#31008b;
+        color: #ddd;
+        margin: 15px;
+        margin-top: 30px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.5vw;
+        padding: 15px;
+        width: auto;
+    }
+    @media screen and (max-width: 700px) {
+        .bar{
+            font-size: 3vw;
+        }
+    }
+    
+    .shadowpage {
+        margin: 2%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: inline-block;
+        width: 96%;
+        border-radius: 7px;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .main {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    
+    .main::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .card {
+        width: 20%;
+        display: inline-block;
+        box-shadow: 1px 1px 5px black;
+        /*border-radius: 5px;*/
+        margin: 2%;
+    }
+    
+    .image img {
+        width: 100%;
+        /*border-top-right-radius: 5px;
+  border-top-left-radius: 5px;*/
+    }
+    
+    .title {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .seebttn1 {
+        background-image: linear-gradient(#0b17c4, #3d018b);
+        color: white;
+        font-size: 16px;
+        vertical-align: middle;
+        margin-right: 20px;
+        margin-bottom: 100px;
+        padding: 16px 32px;
+        width: 100px;
+        border-radius: 30px;
+        text-align: center;
+        display: inline-block;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        .card {
+            width: 40%;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .main {
+            width: 100%;
+        }
+        .card {
+            width: 200px;
+        }
+    }
+    
+    .container {
+        width: 90%;
+        margin: 50px auto;
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: row wrap;
+    }
+    
+    .flip-card {
+        background-color: transparent;
+        width: 200px;
+        height: 200px;
+        perspective: 1000px;
+        display: flex;
+        overflow-x: auto;
+        padding-left: 10px;
+        padding-bottom: 25px;
+    }
+    
+    .flip-card::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .flip-card-inner {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .flip-card-front {
+        background: linear-gradient(#1a00ad, #57008a);
+        color: rgb(255, 255, 255);
+        font-size: 15px;
+
+    }
+    
+    .flip-card-back {
+        background-color: #ffffff;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #c7baff;
+        color: black;
+        padding: 5px;
+        transform: rotateY(180deg);
+    }
+    
+    .card-front-header {
+        text-align: center;
+        font-size: 12px;
+        padding-top: 70px;
+    }
+    
+    .card-header {
+        text-align: center;
+        color: black;
+        font-size: 12px;
+    }
+    
+    .card-body {
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .card-body .btn {
+        display: block;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        background: linear-gradient(to right, #0603d3, #6f00ff);
+        margin-top: 5px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        .flip-card {
+            width: 40%;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .container {
+            width: 100%;
+        }
+        .flip-card {
+            width: 200px;
+        }
+    }
+    
+    .containernotes {
+        position: relative;
+        width: 200px;
+        height: 220px;
+        margin: 10px;
+        padding-top: 20px;
+        display: inline-block;
+    }
+    
+    .notescard {
+        opacity: 1;
+        width: 200px;
+        height: 200px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        background-color: rgb(164, 157, 255);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .notesimg {
+        height: 70%;
+        width: 100%;
+    }
+    
+    .nmiddle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .containernotes:hover .notescard {
+        opacity: 0.3;
+        filter: grayscale();
+    }
+    
+    .containernotes:hover .nmiddle {
+        opacity: 1;
+    }
+    
+    .dbttn {
+        background-color: #3d2ec7;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+    
+    .notestext {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .notesscrolling-wrapper {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding-left: 20px;
+    }
+    
+    .notesscrolling-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .seebttn {
+        background-image: linear-gradient(#854399, #013d8b);
+        color: white;
+        font-size: 16px;
+        vertical-align: middle;
+        margin-right: 20px;
+        padding: 16px 32px;
+        width: 100px;
+        border-radius: 30px;
+        text-align: center;
+        margin-bottom: 100px;
+        display: inline-block;
+    }
+    
+    .table1,
+    .table1 td {
+        border: 2px solid #618ff3;
+        text-align: center;
+    }
+    
+    .table1 {
+        border-collapse: collapse;
+        margin: 5%;
+        width: 90%
+    }
+    
+    .table1 td {
+        padding: 30px;
+        width: 40%;
+    }
+    
+    .table1 td+td {
+        width: auto;
+    }
+    
+    .table2,
+    .table2 td {
+        text-align: center;
+    }
+    
+    .table2 {
+        border-collapse: collapse;
+        margin: 5%;
+        width: 90%;
+    }
+    
+    .table2 td {
+        padding: 8px;
+        width: 70%;
+        border: 2px solid rgb(255, 255, 255);
+    }
+    
+    .table2 td+td {
+        width: auto;
+    }
+    
+    .table2 tr:nth-child(odd) {
+        background-color: rgb(164, 157, 255);
+    }
+    
+    .table2 tr:nth-child(even) {
+        background-color: #8bcffd;
+    }
+    
+    .contact-card-main {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    
+    .contact-card-main::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .contact-card {
+        width: 300px;
+        height: 400px;
+        border-radius: 6px;
+        position: relative;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+        margin: 2%;
+        display: inline-block;
+        overflow: hidden;
+        background-color: #FFF;
+    }
+    
+    .contact-card-upper {
+        height: 120px;
+        background: #8bcffd;
+    }
+    
+    .contact-card-lower {
+        height: 280px;
+        background-color: #FFF;
+        padding: 20px;
+        padding-top: 70px;
+        text-align: center;
+    }
+    
+    .contact-card-lower h3 {
+        box-sizing: border-box;
+        line-height: .6;
+        font-weight: bolder;
+        color: #041036;
+        font-size: 20px;
+    }
+    
+    .contact-card-lower h4 {
+        color: #48509b;
+        opacity: .6;
+        font-weight: bold
+    }
+    
+    .contact-card-lower p {
+        font-size: 16px;
+        color: gray;
+        margin-bottom: 30px
+    }
+    
+    .contact-card-lower a {
+        color: gray;
+    }
+    
+    .contact-card-image {
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        transform: translate(100px, 80px);
+        padding: 5px;
+    }
+    
+    .contact-card-image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    
+    footer {
+        background-color: #1c005c;
+        display: block;
+        width: 100%
+    }
+    
+    inner-footer {
+        width: 95%;
+        margin: auto;
+        padding: 30px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+    
+    .footer-items {
+        display: inline-flex;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    
+    .footer-items h1 {
+        font-size: 50px;
+        color: rgb(163, 147, 199);
+        text-transform: uppercase;
+    }
+    
+    .footer-items h2 {
+        text-align: center;
+        color: gray;
+        font-size: 16px;
+        font-weight: lighter;
+        text-transform: uppercase;
+    }
+    
+    .border {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    
+    ul {
+        list-style: none;
+        color: #fff;
+        font-size: 15px;
+    }
+    
+    ul a {
+        text-decoration: none;
+        outline: none;
+        color: none;
+        transition: 0.3s;
+    }
+    
+    ul a:hover {
+        color: #ff9800;
+    }
+    
+    ul li {
+        margin: 10px;
+        height: 25px;
+        position: relative;
+    }
+    
+    li i {
+        margin-right: 20px;
+        text-align: center;
+    }
+    
+    .social a {
+        text-decoration: none;
+        float: right;
+    }
+    
+    .social i {
+        height: 15px;
+        width: 15px;
+        margin: 20px 5px;
+        padding: 10px;
+        color: #fff;
+        border-radius: 50%;
+        border: 1px solid gray;
+        transition: 0.3s;
+    }
+    
+    .social i:hover {
+        background: gray;
+    }
+    
+    .footer-bottom {
+        padding: 20px;
+        background: #3b335a;
+        color: #fff;
+        font-size: 12px;
+    }
+    
+    @media screen and (max-width: 1085px) {
+        .footer-items {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .footer-items {
+            width: 100%;
+        }
+    }
+    
+    .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .popup-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        margin-bottom: 100px;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+    
+    @-webkit-keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+    
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+    
+    .close1 {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close1:hover,
+    .close1:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .popup-header {
+        padding: 2px 16px;
+        background-color: #a599e9;
+        color: white;
+    }
+    
+    .popup-body {
+        padding: 30px;
+    }
+    .tutorial-popup{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: scroll; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+        
+    /*Removed modal box, i.e. background and border*/
+  .tutorial-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+
+  @-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+  }
+
+  @keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+  } 
+          .tutorial-header{
+        padding: 2px 16px;
+        background-color: #736dc9;
+        color: black;
+
+
+      }
+      .tutorial-body{
+        position: relative;
+        padding:25px ;
+        
+        
+      }
+      .videoContainer{
+       position: relative;
+      width: 560px;
+      
+      height: 316px;
+      margin: auto;
+      }
+      .videoContainer iframe{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+
+          .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+@media screen  and (max-width: 750px){
+  .videoContainer{
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+}
+  
+
+</style>
+</head>
+
+<body>
+    <header>
+
+        <div class="topnav" id="myTopnav">
+            <a>GATE CLASSES</a>
+            <a class="active" href="{% url 'homepage' %}">Home</a>
+            <a href=dept_2.html>Video Lectures</a>
+            <a href="#syllabus">Syllabus</a>
+            <a href="#Notes">Notes</a>
+            <a href="#Books">Books</a>
+            <a href="#Questions">Questions</a>
+            <a href="#Contact">Contact</a> 
+            <a href="/logout/"> Logout</a>
+            
+<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+        </div>
+    
+
+        <div class="heading" id="Heading">
+            GATE Mechanical 2021
+        </div>
+
+          <script src="js/jssor.slider-28.0.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.jssor_1_slider_init = function() {
+
+            var jssor_1_SlideoTransitions = [
+              [{b:-1,d:1,ls:0.5},{b:0,d:1000,y:5,e:{y:6}}],
+              [{b:-1,d:1,ls:0.5},{b:200,d:1000,y:25,e:{y:6}}],
+              [{b:-1,d:1,ls:0.5},{b:400,d:1000,y:45,e:{y:6}}],
+              [{b:-1,d:1,ls:0.5},{b:600,d:1000,y:65,e:{y:6}}],
+              [{b:-1,d:1,ls:0.5},{b:800,d:1000,y:85,e:{y:6}}],
+              [{b:-1,d:1,ls:0.5},{b:500,d:1000,y:195,e:{y:6}}],
+              [{b:0,d:2000,y:30,e:{y:3}}],
+              [{b:-1,d:1,rY:-15,tZ:100},{b:0,d:1500,y:30,o:1,e:{y:3}}],
+              [{b:-1,d:1,rY:-15,tZ:-100},{b:0,d:1500,y:100,o:0.8,e:{y:3}}],
+              [{b:500,d:1500,o:1}],
+              [{b:0,d:1000,y:380,e:{y:6}}],
+              [{b:300,d:1000,x:80,e:{x:6}}],
+              [{b:300,d:1000,x:330,e:{x:6}}],
+              [{b:-1,d:1,r:-110,sX:5,sY:5},{b:0,d:2000,o:1,r:-20,sX:1,sY:1,e:{o:6,r:6,sX:6,sY:6}}],
+              [{b:0,d:600,x:150,o:0.5,e:{x:6}}],
+              [{b:0,d:600,x:1140,o:0.6,e:{x:6}}],
+              [{b:-1,d:1,sX:5,sY:5},{b:600,d:600,o:1,sX:1,sY:1,e:{sX:3,sY:3}}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $LazyLoading: 1,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $SpacingX: 20,
+                $SpacingY: 20
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 3000;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+    <style>
+        /* jssor slider loading skin spin css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /*jssor slider bullet skin 132 css*/
+        .jssorb132 {position:absolute;}
+        .jssorb132 .i {position:absolute;cursor:pointer;}
+        .jssorb132 .i .b {fill:#fff;fill-opacity:0.8;stroke:#000;stroke-width:1600;stroke-miterlimit:10;stroke-opacity:0.7;}
+        .jssorb132 .i:hover .b {fill:#000;fill-opacity:.7;stroke:#fff;stroke-width:2000;stroke-opacity:0.8;}
+        .jssorb132 .iav .b {fill:#000;stroke:#fff;stroke-width:2400;fill-opacity:0.8;stroke-opacity:1;}
+        .jssorb132 .i.idn {opacity:0.3;}
+
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+    </style>
+    <svg viewbox="0 0 0 0" width="0" height="0" style="display:block;position:relative;left:0px;top:0px;">
+        <defs>
+            <filter id="jssor_1_flt_1" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stddeviation="4"></feGaussianBlur>
+            </filter>
+            <radialGradient id="jssor_1_grd_2">
+                <stop offset="0" stop-color="#fff"></stop>
+                <stop offset="1" stop-color="#000"></stop>
+            </radialGradient>
+            <mask id="jssor_1_msk_3">
+                <path fill="url(#jssor_1_grd_2)" d="M600,0L600,400L0,400L0,0Z" x="0" y="0" style="position:absolute;overflow:visible;"></path>
+            </mask>
+        </defs>
+    </svg>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1600px;height:380px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin2.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:380px;overflow:hidden;">
+
+            <div>
+                <img data-u="image" data-src="img/px-apartment-chairs-contemporary-2015560-1600.jpg" />
+                <div data-ts="flat" data-p="540" data-po="40% 50%" style="left:0px;top:0px;width:1600px;height:380px;position:absolute;">
+                    <div data-to="50% 50%" data-ts="preserve-3d" data-t="6" style="left:350px;top:360px;width:900px;height:500px;position:absolute;">
+                        <svg viewbox="0 0 800 60" data-to="50% 50%" width="800" height="60" data-t="7" style="left:0px;top:-70px;display:block;position:absolute;opacity:0;font-family:'Roboto Condensed',sans-serif;font-size:60px;font-weight:700;letter-spacing:0.05em;overflow:visible;">
+                            <text fill="#454447" stroke="#ff9500" stroke-width="2" text-anchor="middle" x="400" y="60">INTERIOR DESIGN
+                            </text>
+                        </svg>
+                        <div data-to="50% 50%" data-t="8" style="filter:url('#jssor_1_flt_1');left:200px;top:0px;width:600px;height:60px;position:absolute;opacity:0;color:#C49D8F;font-family:Roboto Condensed, sans-serif;font-size:48px;line-height:1.2;letter-spacing:0.1em;text-align:center;">FOR STYLISH LIFE</div>
+                        <svg viewbox="0 0 800 100" width="800" height="100" data-t="9" style="left:40px;top:250px;display:block;position:absolute;opacity:0;font-family:'Roboto Condensed',sans-serif;font-size:100px;font-weight:900;letter-spacing:0.5em;overflow:visible;">
+                            <text fill="rgba(255,255,255,0.7)" stroke="#ff9500" text-anchor="middle" x="400" y="100">BRAND NAME
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#000000;">
+                <img data-u="image" style="opacity:0.8;" data-src="img/px-back-view-boats-couple-2612852-1600.jpg" />
+                <div data-ts="flat" data-p="1080" style="left:0px;top:0px;width:1600px;height:560px;position:absolute;">
+                    <svg viewbox="0 0 600 400" data-ts="preserve-3d" width="600" height="400" data-tchd="jssor_1_msk_3" style="left:255px;top:0px;display:block;position:absolute;overflow:visible;">
+                        <g mask="url(#jssor_1_msk_3)">
+                            <path data-to="300px -180px" fill="none" stroke="rgba(250,251,252,0.5)" stroke-width="20" d="M410-350L410-10L190-10L190-350Z" x="190" y="-350" data-t="10" style="position:absolute;overflow:visible;"></path>
+                        </g>
+                    </svg>
+                    <svg viewbox="0 0 800 72" data-to="50% 50%" width="800" height="72" data-t="11" style="left:-800px;top:78px;display:block;position:absolute;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;overflow:visible;">
+                        <text fill="#fafbfc" text-anchor="middle" x="400" y="72">GULF MEXICO
+                        </text>
+                    </svg>
+                    <svg viewbox="0 0 800 72" data-to="50% 50%" width="800" height="72" data-t="12" style="left:1600px;top:153px;display:block;position:absolute;font-family:'Roboto Condensed',sans-serif;font-size:60px;font-weight:900;overflow:visible;">
+                        <text fill="#fafbfc" text-anchor="middle" x="400" y="72">ENJOY SAILBOAT
+                        </text>
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" data-src="img/yamamoto.jpg" />
+                <div data-ts="flat" data-p="1080" style="left:0px;top:0px;width:1600px;height:560px;position:absolute;">
+                    <div data-to="50% 50%" data-t="13" style="left:100px;top:-20px;width:800px;height:200px;position:absolute;opacity:0;">
+                        <div style="left:94px;top:35px;width:480px;height:90px;position:absolute;color:rgba(74,217,205,0.5);font-family:'Roboto Condensed',sans-serif;font-size:72px;line-height:1.2;">CREATION</div>
+                        <div style="left:307px;top:115px;width:400px;height:50px;position:absolute;color:rgba(74,217,205,0.5);font-family:'Roboto Condensed',sans-serif;font-size:42px;line-height:1.1;text-align:center;background-color:rgba(72,77,76,0.5);">for creative peoples</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" data-src="img/050.jpg" />
+                <div data-ts="flat" data-p="1080" style="left:0px;top:0px;width:1600px;height:560px;position:absolute;">
+                    <div data-to="50% 50%" data-t="14" style="left:690px;top:140px;width:600px;height:150px;position:absolute;opacity:1;color:#ffffff;font-family:Georgia,'Times New Roman',Times,serif;font-size:60px;line-height:1.2;letter-spacing:0.1em;">Motivational<br />quotes.</div>
+                    
+                    <img data-to="50% 50%" data-t="16" style="left:1330px;top:8px;width:172px;height:131px;position:absolute;opacity:0;max-width:172px;" data-src="img/NIT-Durgapur-Logo.png" />
+                </div>
+            </div>
+        </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">slider html</a>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb132" style="position:absolute;bottom:24px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:12px;height:12px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();
+    </script>
+
+    </header>
+    <div class="page" id="page">
+        <div class="bar">
+            GATE 2021 - Ace GATE Exam With our Assistance
+        </div>
+        <section>
+            <div id="VideoLectures">
+                <a href="dept_2.html"><h2>Recent Uploads</h2></a>
+                <hr>
+                <div class="shadowpage">
+                    <div>
+                        <div class="main">
+                            <div class="card">
+                                <div class="image">
+                                   <a class="videoBtn" onclick="document.getElementById('myTutorial').style.display='block'; document.body.style.overflowY='hidden'">
+                                        <img src="https://cdn1.byjus.com/byjusweb/img/landing-pages/jee/vt-1.jpg">
+                                    </a>
+                                  <div id="myTutorial" class="tutorial-popup">
+                                    <!--modal content-->
+                                    <div class="tutorial-content">
+                                      <div class="tutorial-header">
+                                        <span onclick="document.getElementById('myTutorial').style.display='none'; stopVideo(mod); document.body.style.overflowY='scroll'" class="close">&times;</span>
+                                        <h2 style="text-align: center;">GATE Mechanical</h2>                                      
+                                        </div>
+                                      <div class="tutorial-body">
+                                      <div class="videoContainer">
+                                      <iframe width="560" height="315" src="https://www.youtube.com/embed/QH2-TGUlwu4?vq=hd1080&modestbranding=1&rel=0"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                        <p>Some Text here...</p>
+                                      </div>                                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="title">
+                                 <h1>
+                                Write title Here</h1>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="image">
+                                   <a class="videoBtn" onclick="document.getElementById('myTutorial').style.display='block'; document.body.style.overflowY='hidden'">
+                                        <img src="https://cdn1.byjus.com/byjusweb/img/landing-pages/jee/vt-1.jpg">
+                                    </a>
+                                  <div id="myTutorial" class="tutorial-popup">
+                                    <!--modal content-->
+                                    <div class="tutorial-content">
+                                      <div class="tutorial-header">
+                                        <span onclick="document.getElementById('myTutorial').style.display='none'; stopVideo(mod); document.body.style.overflowY='scroll'" class="close">&times;</span>
+                                        <h2 style="text-align: center;">GATE Mechanical</h2>                                      
+                                        </div>
+                                      <div class="tutorial-body">
+                                      <div class="videoContainer">
+                                      <iframe width="560" height="315" src="https://www.youtube.com/embed/QH2-TGUlwu4?vq=hd1080&modestbranding=1&rel=0"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                        <p>Some Text here...</p>
+                                      </div>                                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="title">
+                                 <h1>
+                                Write title Here</h1>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="image">
+                                   <a class="videoBtn" onclick="document.getElementById('myTutorial').style.display='block'; document.body.style.overflowY='hidden'">
+                                        <img src="https://cdn1.byjus.com/byjusweb/img/landing-pages/jee/vt-1.jpg">
+                                    </a>
+                                  <div id="myTutorial" class="tutorial-popup">
+                                    <!--modal content-->
+                                    <div class="tutorial-content">
+                                      <div class="tutorial-header">
+                                        <span onclick="document.getElementById('myTutorial').style.display='none'; stopVideo(mod); document.body.style.overflowY='scroll'" class="close">&times;</span>
+                                        <h2 style="text-align: center;">GATE Mechanical</h2>                                      
+                                        </div>
+                                      <div class="tutorial-body">
+                                      <div class="videoContainer">
+                                      <iframe width="560" height="315" src="https://www.youtube.com/embed/QH2-TGUlwu4?vq=hd1080&modestbranding=1&rel=0"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                        <p>Some Text here...</p>
+                                      </div>                                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="title">
+                                 <h1>
+                                Write title Here</h1>
+                                </div>
+                              </div>
+                            <div class="card">
+                                <div class="image">
+                                   <a class="videoBtn" onclick="document.getElementById('myTutorial').style.display='block'; document.body.style.overflowY='hidden'">
+                                        <img src="https://cdn1.byjus.com/byjusweb/img/landing-pages/jee/vt-1.jpg">
+                                    </a>
+                                  <div id="myTutorial" class="tutorial-popup">
+                                    <!--modal content-->
+                                    <div class="tutorial-content">
+                                      <div class="tutorial-header">
+                                        <span onclick="document.getElementById('myTutorial').style.display='none'; stopVideo(mod); document.body.style.overflowY='scroll'" class="close">&times;</span>
+                                        <h2 style="text-align: center;">GATE Mechanical</h2>                                      
+                                        </div>
+                                      <div class="tutorial-body">
+                                      <div class="videoContainer">
+                                      <iframe width="560" height="315" src="https://www.youtube.com/embed/QH2-TGUlwu4?vq=hd1080&modestbranding=1&rel=0"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                        <p>Some Text here...</p>
+                                      </div>                                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="title">
+                                 <h1>
+                                Write title Here</h1>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="image">
+                                   <a class="videoBtn" onclick="document.getElementById('myTutorial').style.display='block'; document.body.style.overflowY='hidden'">
+                                        <img src="https://cdn1.byjus.com/byjusweb/img/landing-pages/jee/vt-1.jpg">
+                                    </a>
+                                  <div id="myTutorial" class="tutorial-popup">
+                                    <!--modal content-->
+                                    <div class="tutorial-content">
+                                      <div class="tutorial-header">
+                                        <span onclick="document.getElementById('myTutorial').style.display='none'; stopVideo(mod); document.body.style.overflowY='scroll'" class="close">&times;</span>
+                                        <h2 style="text-align: center;">GATE Mechanical</h2>                                      
+                                        </div>
+                                      <div class="tutorial-body">
+                                      <div class="videoContainer">
+                                      <iframe width="560" height="315" src="https://www.youtube.com/embed/QH2-TGUlwu4?vq=hd1080&modestbranding=1&rel=0"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                      </div>
+                                        <p>Some Text here...</p>
+                                      </div>                                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="title">
+                                 <h1>
+                                Write title Here</h1>
+                                </div>
+                              </div>
+                            <div class="seebttn1"><a href="" target="_blank" download>See More</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+
+            <div id="syllabus">
+                <h2>GATE Syllabus</h2>
+                <hr>
+                <div class="shadowpage">
+                    <div class="container">
+                        <div class="row">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="card-front-header">
+                                            <h1>Engineering Mathematics</h1>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-header">
+                                            <h3>Engineering Mathematics</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Linear Algebra: Matrix algebra, Systems of linear equations, Eigen values and eigenvectors.
+                                            </p>
+                                            <p>Calculus: Functions of single variable, Limit.. </p>
+                                            <div class="btn">Read more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="card-front-header">
+                                            <h1> Applied Mechanics and Design</h1>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-header">
+                                            <h3> Applied Mechanics and Design</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Engineering Mechanics: Free-body diagrams and equilibrium; friction and its applications including rolling
+                                                friction, belt-pulley, brakes, clutches, screw jack, wedge, vehicles, etc.; trusses and frames;... </p>
+                                            <div class="btn">Read more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="card-front-header">
+                                            <h1> Fluid Mechanics and Thermal Sciences</h1>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-header">
+                                            <h3> Fluid Mechanics and Thermal Sciences</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Fluid Mechanics: Fluid properties; fluid statics, forces on submerged bodies, stability of floating bodies; controlvolume analysis of mass, momentum and energy; fluid acceleration;...</p>
+                                            <div class="btn">Read more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="card-front-header">
+                                            <h1>Materials, Manufacturing and Industrial Engineering</h1>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="card-header">
+                                            <h3>Materials, Manufacturing and Industrial Engineering</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Engineering Materials: Structure and properties of engineering materials, phase diagrams, heat treatment, stressstrain diagrams for engineering...</p>
+                                            <div class="btn">Read more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="Notes" class="notes">
+                <h2>Notes</h2>
+                <hr>
+                <div class="shadowpage">
+                    <div class="notesscrolling-wrapper">
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="containernotes">
+                            <div class="notescard">
+                                <img src="{% static 'first2.jpg' %}" class="notesimg">
+                                <div class="notestext">Random Notes</div>
+                            </div>
+                            <div class="nmiddle">
+                                <div class="dbttn"><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></div>
+                            </div>
+                        </div>
+                        <div class="seebttn"><a href="dept_2.html" target="_blank">See More</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="Books">
+                <h2>Books</h2>
+                <hr>
+                <div class="shadowpage">
+                    <table class="table1">
+                        <tr>
+                            <td>Engineering Mathematics</td>
+                            <td>
+                                <p>1.Random Book by random author</p>
+                                <p>2.Random Book by random author</p>
+                                <p>3.Random Book by random author</p>
+                                <p>4.Random Book by random author</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Engineering Mathematics</td>
+                            <td>
+                                <p>1.Random Book by random author</p>
+                                <p>2.Random Book by random author</p>
+                                <p>3.Random Book by random author</p>
+                                <p>4.Random Book by random author</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Engineering Mathematics</td>
+                            <td>
+                                <p>1.Random Book by random author</p>
+                                <p>2.Random Book by random author</p>
+                                <p>3.Random Book by random author</p>
+                                <p>4.Random Book by random author</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="Questions">
+                <h2>Previous Question Papers</h2>
+                <hr>
+                <div class="shadowpage">
+                    <table class="table2">
+                        <tr>
+                            <td>GATE Question Paper 2020</td>
+                            <td><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>GATE Question Paper 2019</td>
+                            <td><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>GATE Question Paper 2018</td>
+                            <td><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>GATE Question Paper 2017</td>
+                            <td><a href="{% static 'B.Tech_Maths_ Syllabus.pdf' %}" target="_blank" download>Download</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="Contact">
+                <h2>Contact Us</h2>
+                <hr>
+                <div class="shadowpage">
+                    <div class="contact-card-main">
+                        <div class="contact-card">
+                            <div class="contact-card-upper">
+                                <div class="contact-card-image">
+                                    <img src="{% static 'cat.jpg' %}">
+                                </div>
+                            </div>
+                            <div class="contact-card-lower">
+                                <h3> Professor Name</h3>
+                                <h4>Contact number:</h4>
+                                <p>987654321</p>
+                                <h4>Mail id:</h4>
+                                <p><a href="mailto:bhattacharyaankita018@gmail.com">bhattachayaankita018@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-upper">
+                                <div class="contact-card-image">
+                                    <img src="{% static 'cat.jpg' %}">
+                                </div>
+                            </div>
+                            <div class="contact-card-lower">
+                                <h3> Professor Name</h3>
+                                <h4>Contact number:</h4>
+                                <p>987654321</p>
+                                <h4>Mail id:</h4>
+                                <p><a href="mailto:bhattacharyaankita018@gmail.com">bhattachayaankita018@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-upper">
+                                <div class="contact-card-image">
+                                    <img src="{% static 'cat.jpg' %}">
+                                </div>
+                            </div>
+                            <div class="contact-card-lower">
+                                <h3> Professor Name</h3>
+                                <h4>Contact number:</h4>
+                                <p>987654321</p>
+                                <h4>Mail id:</h4>
+                                <p><a href="mailto:bhattacharyaankita018@gmail.com">bhattachayaankita018@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-upper">
+                                <div class="contact-card-image">
+                                    <img src="{% static 'cat.jpg' %}">
+                                </div>
+                            </div>
+                            <div class="contact-card-lower">
+                                <h3> Professor Name</h3>
+                                <h4>Contact number:</h4>
+                                <p>987654321</p>
+                                <h4>Mail id:</h4>
+                                <p><a href="mailto:bhattacharyaankita018@gmail.com">bhattachayaankita018@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-upper">
+                                <div class="contact-card-image">
+                                    <img src="{% static 'cat.jpg' %}">
+                                </div>
+                            </div>
+                            <div class="contact-card-lower">
+                                <h3> Professor Name</h3>
+                                <h4>Contact number:</h4>
+                                <p>987654321</p>
+                                <h4>Mail id:</h4>
+                                <p><a href="mailto:bhattacharyaankita018@gmail.com">bhattachayaankita018@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="inner-footer">
+            <div class="footer-items">
+                <h1> GATE 2021</h1>
+            </div>
+            <div class="footer-items">
+
+                <div class="border">
+                    <ul>
+                        <h2>Quick Links</h2>
+                        <li><a href="#Heading">Back to Top</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact us</a></li>
+                        <li><a href="">Webteam</a></li>
+                        <li><a href="">Student Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-items">
+
+                <div class="border">
+                    <ul>
+                        <h2>Departments</h2>
+                        <li><a href="">Biotechnology</a></li>
+                        <li><a href="">Civil</a></li>
+                        <li><a href="">Chemical </a></li>
+                        <li><a href="">Computer Science</a></li>
+                        <li><a href="">Electrical</a></li>
+                        <li><a href="">Electronics and Communications</a></li>
+                        <li><a href="">Mechanical</a></li>
+                        <li><a href="">Metallurgy and Materials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-items">
+
+                <div class="border">
+                    <ul>
+                        <h2>Resources</h2>
+                        <li><a href="">Books</a></li>
+                        <li><a href="">Lecture Notes</a></li>
+                        <li><a href="">Previous Question Papers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social">
+                <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+                <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> Last updated: 2020-07-14</p>
+            Copyright: &copy; abc.in All rights reserved
+        </div>
+    </footer>
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <span class="close1">&times;</span>
+                <h2>Engineering Mathematics</h2>
+            </div>
+            <div class="popup-body">
+                <p>Linear Algebra: Matrix algebra, Systems of linear equations, Eigen values and eigenvectors.</p>
+                <p>
+                    Calculus: Functions of single variable, Limit, continuity and differentiability, Taylor series, Mean value theorems, Evaluation of definite and improper integrals, Partial derivatives, Total derivative, Maxima and minima, Gradient, Divergence and Curl,
+                    Vector identities, Directional derivatives, Line, Surface and Volume integrals, Stokes, Gauss and Green’s theorems.
+                </p>
+                <p>
+                    Differential equations: First order equations (linear and nonlinear), Higher order linear differential equations with constant coefficients, Cauchy’s and Euler’s equations, Initial and boundary value problems, Laplace transforms, Solutions of one dimensional
+                    heat and wave equations and Laplace equation.
+                </p>
+                <p>
+                    Complex variables: Complex number, polar form of complex number, triangle inequality. Probability and Statistics: Definitions of probability and sampling theorems, Conditional probability, Mean, median, mode and standard deviation, Random variables, Poisson,
+                    Normal and Binomial distributions, Linear regression analysis.
+
+                </p>
+                <p>
+                    Numerical Methods: Numerical solutions of linear and non-linear algebraic equations. Integration by trapezoidal and Simpson’s rule. Single and multi-step methods for numerical solution of differential equations.
+                </p>
+            </div>
+        </div>
+    </div>
+
+ 
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <span class="close1">&times;</span>
+                <h2>Applied Mechanics and Design</h2>
+            </div>
+            <div class="popup-body">
+                <p>Engineering Mechanics: Free-body diagrams and equilibrium; friction and its applications including rolling
+                friction, belt-pulley, brakes, clutches, screw jack, wedge, vehicles, etc.; trusses and frames; virtual work;
+                kinematics and dynamics of rigid bodies in plane motion; impulse and momentum (linear and angular) and
+                energy formulations; Lagrange’s equation.</p>
+                <p>Mechanics of Materials: Stress and strain, elastic constants, Poisson's ratio; Mohr’s circle for plane stress and
+                plane strain; thin cylinders; shear force and bending moment diagrams; bending and shear stresses; concept of
+                shear centre; deflection of beams; torsion of circular shafts; Euler’s theory of columns; energy methods; thermal
+                stresses; strain gauges and rosettes; testing of materials with universal testing machine; testing of hardness and
+                impact strength.</p>
+                <p>Theory of Machines: Displacement, velocity and acceleration analysis of plane mechanisms; dynamic analysis of
+                linkages; cams; gears and gear trains; flywheels and governors; balancing of reciprocating and rotating masses;
+                gyroscope</p>.
+                <p>Vibrations: Free and forced vibration of single degree of freedom systems, effect of damping; vibration isolation;
+                resonance; critical speeds of shafts.</p>
+                <p>Machine Design: Design for static and dynamic loading; failure theories; fatigue strength and the S-N diagram;
+                principles of the design of machine elements such as bolted, riveted and welded joints; shafts, gears, rolling and
+                sliding contact bearings, brakes and clutches, springs.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <span class="close1">&times;</span>
+                <h2> Fluid Mechanics and Thermal Sciences</h2>
+            </div>
+            <div class="popup-body">
+                <p>Fluid Mechanics: Fluid properties; fluid statics, forces on submerged bodies, stability of floating bodies; controlvolume analysis of mass, momentum and energy; fluid acceleration; differential equations of continuity and
+                momentum; Bernoulli’s equation; dimensional analysis; viscous flow of incompressible fluids, boundary layer,
+                elementary turbulent flow, flow through pipes, head losses in pipes, bends and fittings; basics of compressible
+                fluid flow.</p>
+                <p>Heat-Transfer: Modes of heat transfer; one dimensional heat conduction, resistance concept and electrical
+                analogy, heat transfer through fins; unsteady heat conduction, lumped parameter system, Heisler's charts; thermal
+                boundary layer, dimensionless parameters in free and forced convective heat transfer, heat transfer correlations
+                for flow over flat plates and through pipes, effect of turbulence; heat exchanger performance, LMTD and NTU
+                methods; radiative heat transfer, Stefan- Boltzmann law, Wien's displacement law, black and grey surfaces, view
+                factors, radiation network analysis.</p>
+                <p>Thermodynamics: Thermodynamic systems and processes; properties of pure substances, behavior of ideal and
+                real gases; zeroth and first laws of thermodynamics, calculation of work and heat in various processes; second
+                law of thermodynamics; thermodynamic property charts and tables, availability and irreversibility;
+                thermodynamic relations.</p>
+                <p>Applications: Power Engineering: Air and gas compressors; vapour and gas power cycles, concepts of
+                regeneration and reheat. I.C. Engines: Air-standard Otto, Diesel and dual cycles. Refrigeration and airconditioning: Vapour and gas refrigeration and heat pump cycles; properties of moist air, psychrometric chart,
+                basic psychrometric processes. Turbomachinery: Impulse and reaction principles, velocity diagrams, Peltonwheel, Francis and Kaplan turbines; steam and gas turbines.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <span class="close1">&times;</span>
+                <h2> Materials, Manufacturing and Industrial Engineering</h2>
+            </div>
+            <div class="popup-body">
+                <p>Engineering Materials: Structure and properties of engineering materials, phase diagrams, heat treatment, stressstrain diagrams for engineering materials.</p>
+                <p>Casting, Forming and Joining Processes: Different types of castings, design of patterns, moulds and cores;
+                solidification and cooling; riser and gating design. Plastic deformation and yield criteria; fundamentals of hot and
+                cold working processes; load estimation for bulk (forging, rolling, extrusion, drawing) and sheet (shearing, deep
+                drawing, bending) metal forming processes; principles of powder metallurgy. Principles of welding, brazing,
+                soldering and adhesive bonding.</p>
+                <p>Machining and Machine Tool Operations: Mechanics of machining; basic machine tools; single and multi-point
+                cutting tools, tool geometry and materials, tool life and wear; economics of machining; principles of nontraditional machining processes; principles of work holding, jigs and fixtures; abrasive machining processes;
+                NC/CNC machines and CNC programming.</p>
+                <p>Metrology and Inspection: Limits, fits and tolerances; linear and angular measurements; comparators;
+                interferometry; form and finish measurement; alignment and testing methods; tolerance analysis in
+                manufacturing and assembly; concepts of coordinate-measuring machine (CMM).</p>
+                <p>Computer Integrated Manufacturing: Basic concepts of CAD/CAM and their integration tools; additive
+                manufacturing.</p>
+                <p>Production Planning and Control: Forecasting models, aggregate production planning, scheduling, materials
+                requirement planning; lean manufacturing.</p>
+                <p>Inventory Control: Deterministic models; safety stock inventory control systems.</p>
+                <p>Operations Research: Linear programming, simplex method, transportation, assignment, network flow models,
+                simple queuing models, PERT and CPM.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+
+        }
+        var coll = document.getElementById("VideoLectures");
+var j;
+
+for (j = 0; j < coll.length; j++) {
+  coll[j].addEventListener("click", function() {
+    this.classList.toggle("activecol");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+    var mod= document.getElementById('myTutorial');
+function stopVideo(modal) {
+  var currentIframe = modal.querySelector('.videoContainer > iframe');
+  currentIframe.src = currentIframe.src;
+}      
+
+        var a;
+        var b;
+        for (b = 0; b< 4; b++) {
+            a = b; {
+                var modal = document.getElementsByClassName("popup")[a];
+                var btn = document.getElementsByClassName("btn")[a];
+                const body = document.body;
+                var span = document.getElementsByClassName("close1")[a];
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                    body.style.overflowY = "hidden";
+                }
+                span.onclick = function() {
+                    modal.style.display = "none";
+                    body.style.overflowY = "scroll";
+                }
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        body.style.overflowY = "scroll";
+                    }
+                }
+            }
+        }
+        
+/*Get modal*/
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var hiding = false;
+            var height = $('#myTopnav').outerHeight(); //the certain pixel
+            $(document).scroll(function() {
+                var scroll = $(document).scrollTop();
+                if (scroll > height) {
+                    $('#myTopnav').css({
+                        'position': 'fixed',
+                        'top': '0',
+                        'left': '0'
+                    }, 300);
+                    if (hiding == false) {
+                        $('#myTopnav').css('display', 'none');
+                        $('#myTopnav').slideDown();
+                        hiding = true;
+                    }
+                } else if (scroll < height) {
+                    $('#myTopnav').css('position', 'relative');
+                    hiding = false;
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>
