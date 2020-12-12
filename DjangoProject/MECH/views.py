@@ -11,7 +11,13 @@ def mechcontact(request):
     return redirect('mechhome')
 
 def mocktest(request):
-    return render(request, 'Mock.html')
+    return render(request, 'list_of_mock_test.html')
 
 def videolec(request):
-    return render(request, 'video-lec.html')
+    return render(request, 'videoLecture.html')
+
+def syllabus(request):
+    return render(request, 'syllabus.html')
+
+def test1(request):
+    return render(request, 'Mock.html')
