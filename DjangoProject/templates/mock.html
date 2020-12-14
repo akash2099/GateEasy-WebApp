@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{% static 'images/NIT-Durgapur-Logo.png' %}" type="image/x-icon">
     <title>Document</title>
 </head>
 
 <body>
     <div class="header">
         <div id="Test-name">
-            <p>Mock 01 ( MECHANICS )</p>
+            <p>Mock-{{info.id}} ( {{info.subject}} )</p>
         </div>
         <div id="attempt">
             <p>Attempted :</p>
@@ -36,11 +35,12 @@
 
         </div>
         <div class="container">
-            <div id="question">
-                <p id="qno">Well Done ....................</p>
-                <p id="q-contain">SEE YOU NEXT TIME</p>
-            </div>
+            
             <div id="keys">
+                <div id="question">
+                    <p id="qno">Well Done ....................</p>
+                    <p id="q-contain">SEE YOU NEXT TIME</p>
+                </div>
                 <div class="option">
                     <p id="no">1</p>
                     <p id="option1"></p>
@@ -79,6 +79,7 @@
             </div>
         </div>
     </div>
+   
 </body>
 
 </html>
@@ -91,7 +92,6 @@
         font-family: Gotham Rounded;
         padding: 0;
         margin: 0;
-        /* overflow: hidden; */
     }
 
     .header {
@@ -100,8 +100,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-image: linear-gradient(to  right, rgb(0, 32, 3),rgb(255, 250, 253));
-        color: rgb(6, 44, 28);
+        background-color: #f1e7ff;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: #7b00ce;
+        color: #5b0185;
+        position:absolute;
+         box-shadow: 0px 0px 5px 1px #969696;
+         z-index:1;
     }
 
     #Test-name {
@@ -110,7 +116,6 @@
         font-size: 25px;
         font-weight: bold;
         background-color:inherit;
-        color: white;
 
     }
 
@@ -119,7 +124,6 @@
         color:rgb(6, 44, 28);
         font-size: large;
         font-weight: bold;
-        color: white;
 
     }
 
@@ -128,10 +132,11 @@
         padding: 5px;
         font-size: 25px;
         font-weight: bold;
-        border: 2px solid rgb(12, 4, 22);
+        
         border-radius: 5px;
         background-color: white;
         color: black;
+        box-shadow: 0px 0px 5px 1px #969696;
     }
 
     #reset {
@@ -146,15 +151,15 @@
 
         margin-right: 20px;
 
-        border: 2px solid rgb(47, 0, 255);
+        border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
         display: none;
     }
 
     #reset:hover {
-        border: 2px solid rgb(255, 255, 255);
-        color: rgb(255, 255, 255);
-        background-color:rgb(4, 0, 255);
+        border: 2px solid rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        color: rgb(64, 3, 231);
     }
 
     #submit {
@@ -170,30 +175,35 @@
         margin-right: 5px;
         background-color:inherit;
         color: rgb(6, 44, 28);
-        border: 2px solid rgb(47, 0, 255);
+        border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
     }
 
     #submit:hover {
         border: 2px solid rgb(255, 255, 255);
         color: rgb(255, 255, 255);
-        background-color:rgb(4, 0, 255);
+        background-color:rgb(6, 44, 28);
     }
 
 
 
     .mid {
+        position:absolute;
+        top:6vh;
+        width:100vw;
+        
         display: flex;
         /* background-color: rgb(14, 27, 209); */
-        /* background-image: linear-gradient(to bottom , rgb(124, 250, 40), rgb(226, 217, 84)); */
-        background-image: url("{% static 'images/green_mock.jpg' %}");
+        /*background-image: linear-gradient(to bottom , rgb(229, 238, 237), rgb(124, 129, 128));*/
         /* background-image: linear-gradient(to bottom right, rgb(17, 240, 103), rgb(255, 255, 255)); */
-
+        background-color: #E5E7EB; 
     }
 
     .sidebar {
         width: 9vw;
         height: 93vh;
+        position:absolute;
+        top:1vh;
         display: block;
         overflow-y: scroll;
         background-color: inherit;
@@ -227,29 +237,34 @@
     }
 
     .question_no_sidebar:hover {
-        background-color: rgba(209, 181, 19, 0.356);
-        border: 2px solid rgb(0, 0, 0);
+        background-color: rgba(112, 137, 143, 0.356);
+        border: 1px solid rgb(0, 0, 0);
     }
 
     .container {
-        width: 90vw;
-        height: 93vh;
+        width: 100vw;
+        height: 94vh;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     #question {
-        margin: 50px 50px 10px 50px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:20px;
+        margin-bottom:30px;
         padding: 100px;
         font-size: large;
         font-weight: bold;
-        width: 60%;
+        width: 80%;
         height: 270px;
-        border: 2px solid gray;
+        border: 1px solid gray;
         border-radius: 1px;
-        background-color: white;
+        background-color: #f3f3f3;
         display: flex;
+        border-color: #7b00ce;
+        box-shadow: 0px 0px 2px 1px #969696;
     }
 
     #qno {
@@ -257,31 +272,35 @@
     }
 
     #keys {
-        width: 60%;
-        height: 310px;
-        border: 2px solid gray;
+        width: 50%;
+        height: 600px;
+        margin-top:50px;
+        border: 0px solid gray;
         display: flex;
         flex-direction: column;
-        border-radius: 1px;
+        border-radius: 5px;
         background-color: white;
+        box-shadow: 0px 0px 15px 2px #969696;
     }
 
     .option {
-        width: 40%;
-        margin: 15px 10px 5px 110px;
+        width: 80%;
+        background-color: #f1e7ff;
+       color: black;
+        margin: 5px 5px 5px 10%;
         padding: 15px;
         display: flex;
         font-size: large;
         font-weight: bold;
         border-radius: 5px;
-        background-color: rgba(178, 78, 236, 0.356);
+        box-shadow: 0px 0px 2px 1px #969696;
         cursor: pointer;
     }
 
     .option:hover {
         background-color: rgb(36, 33, 235);
         color: white;
-        margin-left: 8em;
+        margin-left: 13%;
     }
 
 
@@ -296,14 +315,14 @@
     }
 
     #nxt-prev {
-        width: 60%;
-        height: 100px;
-        margin: 15px;
-        border: 2px solid gray;
+        width: 50%;
+        height: 90px;
+        margin: 20px;
         display: flex;
         justify-content: space-between;
         border-radius: 10px;
         background-color: white;
+        box-shadow: 0px 0px 15px 2px #969696;
     }
 
     .np {
@@ -342,18 +361,29 @@
 </style>
 
 <script>
+/*
     var Exam_Time;
-    fetch("{% static 'images/questions.json' %}").then(res => {
+    fetch("questions.json").then(res => {
         console.log(res)
         return res.json()
     }).then(loadedQuestions => {
         Exam_Time = Math.floor(1000);
         start(loadedQuestions)
-    });
+    });*/
 
+    
+    var Exam_Time;
+    Exam_Time = Math.floor(1000);
+
+    var v= {{mock}}
+    console.log(v)
+    start(v)
+
+    
+ 
 
     reset.addEventListener('click', function run() {
-        localStorage.clear();
+        sessionStorage.clear();
         location.reload();
 
     });
@@ -383,10 +413,10 @@
 
         let store = [], currIndex = 0, remaining_time = Exam_Time;
 
-        let time = localStorage.getItem('time') ? JSON.parse(localStorage.getItem('time')) : 0;
-        let end = localStorage.getItem('end') ? JSON.parse(localStorage.getItem('end')) : 0;
-        let B = localStorage.getItem('curr') ? JSON.parse(localStorage.getItem('curr')) : 0;
-        let A = localStorage.getItem('save') ? JSON.parse(localStorage.getItem('save')) : [];
+        let time = sessionStorage.getItem('time') ? JSON.parse(sessionStorage.getItem('time')) : 0;
+        let end = sessionStorage.getItem('end') ? JSON.parse(sessionStorage.getItem('end')) : 0;
+        let B = sessionStorage.getItem('curr') ? JSON.parse(sessionStorage.getItem('curr')) : 0;
+        let A = sessionStorage.getItem('save') ? JSON.parse(sessionStorage.getItem('save')) : [];
 
         if (end == 1) {
             console.log("End")
@@ -397,9 +427,9 @@
 
         if (A.length == 0) {
             for (let index = 0; index < l; index++) store[index] = -1;
-            localStorage.setItem('save', JSON.stringify(store));
-            localStorage.setItem('curr', JSON.stringify(currIndex));
-            localStorage.setItem('time', JSON.stringify(Exam_Time));
+            sessionStorage.setItem('save', JSON.stringify(store));
+            sessionStorage.setItem('curr', JSON.stringify(currIndex));
+            sessionStorage.setItem('time', JSON.stringify(Exam_Time));
         }
         else {
             currIndex = B;
@@ -409,7 +439,7 @@
         }
 
 
-        // Exam_Time=from localstorage read;
+        // Exam_Time=from sessionstorage read;
         var timer_set = setInterval(function () {
 
             const hours_main = Math.floor(remaining_time / 3600);
@@ -417,11 +447,25 @@
             const minutes_main = Math.floor(minutes / 60);
             const seconds_main = Math.floor(minutes % 60);
             // console.log(hours_main+":"+minutes_main+":"+seconds_main)
+            let hr = String(hours_main)
+            let min = String(minutes_main)
+            let sec = String(seconds_main)
+            if(hours_main-'0'<=9)
+            {
+                hr="0"+hr;
+            }
+            if(minutes_main-'0'<=9)
+            {
+                min="0"+min;
+            }
+            if(seconds_main-'0'<=9)
+            {
+                sec="0"+sec;
+            }
+            document.getElementById("Timer").innerHTML = hr + ":"
+                + min + ":" + sec;
 
-            document.getElementById("Timer").innerHTML = hours_main + ":"
-                + minutes_main + ":" + seconds_main;
-
-            localStorage.setItem('time', JSON.stringify(remaining_time));
+           sessionStorage.setItem('time', JSON.stringify(remaining_time));
 
 
             if (--remaining_time < 0) {
@@ -459,7 +503,7 @@
                 side_color_reset()
                 currIndex = e.target.id - '0';
                 currIndex--;
-                localStorage.setItem('curr', JSON.stringify(currIndex));
+                sessionStorage.setItem('curr', JSON.stringify(currIndex));
                 showQuestion(questions[currIndex]);
             }
         }
@@ -468,8 +512,8 @@
         function side_color_reset() {
             for (let i = 0; i < l; i++) {
                 if (store[i] != -1) {
-                    question_no_sidebar[i].style.color = 'white';
-                    question_no_sidebar[i].style.backgroundColor = 'green';
+                    question_no_sidebar[i].style.color = 'black';
+                    question_no_sidebar[i].style.backgroundColor = 'rgb(100 228 89)';
                 }
                 else {
                     question_no_sidebar[i].style.color = 'blue';
@@ -507,8 +551,8 @@
             console.log(selec);
             let chng = document.getElementById(String(selec));
             if (store[currIndex] != -1) {
-                chng.style.color = 'white';
-                chng.style.backgroundColor = 'green';
+                chng.style.color = 'black';
+                chng.style.backgroundColor = 'rgb(100 228 89)';
             }
             else {
                 chng.style.color = 'white';
@@ -550,7 +594,7 @@
         next.addEventListener('click', function run() {
             if (currIndex < l - 1) {
                 currIndex++;
-                localStorage.setItem('curr', JSON.stringify(currIndex));
+                sessionStorage.setItem('curr', JSON.stringify(currIndex));
                 showQuestion(questions[currIndex])
                 side_color_reset()
 
@@ -561,7 +605,7 @@
         prev.addEventListener('click', function run() {
             if (currIndex > 0) {
                 currIndex--;
-                localStorage.setItem('curr', JSON.stringify(currIndex));
+                sessionStorage.setItem('curr', JSON.stringify(currIndex));
                 showQuestion(questions[currIndex])
                 side_color_reset()
 
@@ -572,14 +616,14 @@
 
         function reset_color() {
             for (i = 0; i < 4; i++) {
-                options_class[i].style.backgroundColor = 'rgba(178, 78, 236, 0.356)'
+                options_class[i].style.backgroundColor = ' #f1e7ff'
                 options_class[i].style.color = 'black'
 
             }
         }
         function change_color(coount) {
             reset_color()
-            options_class[coount].style.backgroundColor = 'rgb(126, 120, 214)'
+            options_class[coount].style.backgroundColor = 'rgb(82, 50, 121)'
             options_class[coount].style.color = 'white'
         }
 
@@ -600,7 +644,7 @@
             //console.log(wrong)
             //console.log(unanswered)
             remove_sidebar_button_color();
-            localStorage.clear();
+            sessionStorage.clear();
             result(correct, wrong, unanswered);
 
         }
@@ -609,7 +653,7 @@
             for (let index = 0; index < answered.length; index++) {
                 if (answered[index] == 1) {
                     store[currIndex] = index;
-                    localStorage.setItem('save', JSON.stringify(store));
+                    sessionStorage.setItem('save', JSON.stringify(store));
                     //console.log(answered);
                     //console.log(store);
                     answer_ques = 1;
@@ -618,25 +662,18 @@
                     console.log(selec);
                     let chng = document.getElementById(String(selec));
                     console.log(chng);
-                    chng.style.color = 'white';
-                    chng.style.backgroundColor = 'green';
-
+                    chng.style.color = 'black';
+                    chng.style.backgroundColor = 'rgb(100 228 89)';
                     break;
                 }
             }
             if (answer_ques == 0) {
                 store[currIndex] = -1;
-                localStorage.setItem('save', JSON.stringify(store));
+                sessionStorage.setItem('save', JSON.stringify(store));
                 //console.log(answered);
                 //console.log(store);
             }
-
             check_attempted();
-            for (let index = 0; index < answered.length; index++) {
-                answered[index] = 0;
-            }
-
-
         });
 
         clear.addEventListener('click', function run() {
@@ -650,7 +687,7 @@
             chng.style.color = 'white';
             chng.style.backgroundColor = 'rgb(82, 50, 121)';
             store[currIndex] = -1;
-            localStorage.setItem('save', JSON.stringify(store));
+            sessionStorage.setItem('save', JSON.stringify(store));
             check_attempted()
             reset_color()
         });
@@ -696,7 +733,7 @@
             op4.innerText = "Unanswered: " + u;
             q_no.innerText = "";
             q.innerText = "RESULT OVERVIEW"
-            localStorage.setItem('end', JSON.stringify(1));
+            sessionStorage.setItem('end', JSON.stringify(1));
             reset_color();
             prev.remove();
             next.remove();
