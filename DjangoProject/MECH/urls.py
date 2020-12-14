@@ -1,5 +1,5 @@
 from django.urls import path, include
-from MECH import views
+from . import views
 
 urlpatterns = [
     path('', views.mechhome, name='mechhome'),
@@ -7,5 +7,5 @@ urlpatterns = [
     path('mocktest/', views.mocktest, name='mocktest'),
     path('video-lec/', views.videolec, name='videolec'),
     path('syllabus/',views.syllabus,name='syllabus'),
-    path('test1/',views.test1,name='test1')
+    path('practise-mock/', include('practise_mock.urls')),
 ]
