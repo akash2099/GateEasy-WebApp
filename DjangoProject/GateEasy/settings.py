@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'practise_mock.apps.PractiseMockConfig',
     'Gate.apps.GateConfig',
     'MECH.apps.MechConfig',
     'django.contrib.admin',
