@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="Test-name">
+            <p>Mock-{{obj.id}} ( {{obj.subject}} )</p>
+        </div>
+        <div id="attempt">
+            <p>Marks Obtained: </p>
+            <p id="up">0</p>
+            <p>/</p>
+            <p id="down">0</p>
+        </div>
+        <div id="attempt">
+            <p>Correct: </p>
+            <p id="correct">0</p>
+        </div>
+        <div id="attempt">
+            <p>Wrong: </p>
+            <p id="wrong">0</p>
+        </div>
+        <div id="attempt">
+            <p>Not-Attempted :</p>
+            <p id="na">0</p>
+            
+        </div>
+
+    </div>
+    <div class="mid">
+        <div class="sidebar" id="sidebar_id">
+
+        </div>
+        <div class="container">
+            
+            <div id="keys">
+                <div id="question">
+                    <p id="qno">Well Done ....................</p>
+                    <p id="q-contain">SEE YOU NEXT TIME</p>
+                </div>
+                <div class="option">
+                    <p id="no">1</p>
+                    <p id="option1"></p>
+                </div>
+                <div class="option">
+                    <p id="no">2</p>
+                    <p id="option2"></p>
+                </div>
+                <div class="option">
+                    <p id="no">3</p>
+                    <p id="option3"></p>
+                </div>
+                <div class="option">
+                    <p id="no">4</p>
+                    <p id="option4"></p>
+                </div>
+
+            </div>
+            <div id="nxt-prev">
+                <div class="np" id="prev">
+                    <p>PREV</p>
+                </div>
+                <div class="np" id="next">
+                    <p>NEXT</p>
+                </div>
+                <!-- <div class="np" id="submit">
+                    <p>SUBMIT</p>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+</html>
+
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        font-family: Gotham Rounded;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header {
+        width: 100vw;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #f1e7ff;
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: #7b00ce;
+        color: #5b0185;
+        position:absolute;
+         box-shadow: 0px 0px 5px 1px #969696;
+         z-index:1;
+    }
+
+    #Test-name {
+        margin-left: 100px;
+        padding: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        background-color:inherit;
+
+    }
+
+    #attempt {
+        display: flex;
+        color:rgb(6, 44, 28);
+        font-size: large;
+        font-weight: bold;
+
+    }
+
+    #Timer {
+        margin-right: 100px;
+        padding: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        box-shadow: 0px 0px 5px 1px #969696;
+    }
+
+    #reset {
+        text-align: center;
+        position: relative;
+        font-weight: bold;
+        font-size: medium;
+        width: 100px;
+        height: 35px;
+        cursor: pointer;
+        padding: 7px;
+
+        margin-right: 20px;
+
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        display: none;
+    }
+
+    #reset:hover {
+        border: 2px solid rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        color: rgb(64, 3, 231);
+    }
+
+    #submit {
+        text-align: center;
+        position: relative;
+        font-weight: bold;
+        font-size: medium;
+        width: 100px;
+        height: 35px;
+        cursor: pointer;
+        padding: 7px;
+
+        margin-right: 5px;
+        background-color:inherit;
+        color: rgb(6, 44, 28);
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+
+    #submit:hover {
+        border: 2px solid rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
+        background-color:rgb(6, 44, 28);
+    }
+
+
+
+    .mid {
+        position:absolute;
+        top:6vh;
+        width:100vw;
+        
+        display: flex;
+        /* background-color: rgb(14, 27, 209); */
+        /*background-image: linear-gradient(to bottom , rgb(229, 238, 237), rgb(124, 129, 128));*/
+        /* background-image: linear-gradient(to bottom right, rgb(17, 240, 103), rgb(255, 255, 255)); */
+        background-color: #E5E7EB; 
+    }
+
+    .sidebar {
+        width: 9vw;
+        height: 93vh;
+        position:absolute;
+        top:1vh;
+        display: block;
+        overflow-y: scroll;
+        background-color: inherit;
+    }
+
+    /* #index {
+        width: 3vw;
+        margin: 5px;
+        padding: 5px 5px 5px 5px;
+        border: 2px solid rgb(36, 33, 235);
+        font-weight: bold;
+        font-size: small;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    #index:hover {
+        background-color: rgba(78, 204, 236, 0.356);
+        border: 2px solid rgb(0, 0, 0);
+    } */
+
+    .question_no_sidebar {
+        width: 3vw;
+        margin: 10px 0px 10px 13px;
+        padding: 5px 5px 5px 5px;
+        border: 1px solid rgb(116, 129, 148);
+        font-weight: bold;
+        font-size: small;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .question_no_sidebar:hover {
+        background-color: rgba(112, 137, 143, 0.356);
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    .container {
+        width: 100vw;
+        height: 94vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #question {
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:20px;
+        margin-bottom:30px;
+        padding: 100px;
+        font-size: large;
+        font-weight: bold;
+        width: 80%;
+        height: 270px;
+        border: 1px solid gray;
+        border-radius: 1px;
+        background-color: #f3f3f3;
+        display: flex;
+        border-color: #7b00ce;
+        box-shadow: 0px 0px 2px 1px #969696;
+    }
+
+    #qno {
+        margin-right: 10px;
+    }
+
+    #keys {
+        width: 50%;
+        height: 600px;
+        margin-top:50px;
+        border: 0px solid gray;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0px 0px 15px 2px #969696;
+    }
+
+    .option {
+        width: 80%;
+        background-color: #f1e7ff;
+       color: black;
+        margin: 5px 5px 5px 10%;
+        padding: 15px;
+        display: flex;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px 1px #969696;
+        cursor: pointer;
+    }
+
+    .option:hover {
+        background-color: rgb(36, 33, 235);
+        color: white;
+        margin-left: 13%;
+    }
+
+
+    #no {
+        padding: 1px 0px 1px 15px;
+        margin-right: 25px;
+        border-radius: 1px;
+        color: blanchedalmond;
+        background-color: rgb(20, 10, 29);
+        padding-right: 15px;
+    
+    }
+
+    #nxt-prev {
+        width: 50%;
+        height: 90px;
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 0px 15px 2px #969696;
+    }
+
+    .np {
+        width: 100px;
+        height: 45px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgb(82, 50, 121);
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .np:hover {
+        background-color: rgb(82, 50, 121);
+        color: white;
+
+    }
+
+    #prev:hover {
+        margin-bottom: 1.76em;
+    }
+
+    #next:hover {
+        margin-bottom: 1.76em;
+    }
+
+    #save:hover {
+        margin-bottom: 1.76em;
+    }
+
+    #clear:hover {
+        margin-bottom: 1.76em;
+    }
+
+</style>
+
+<script>
+    var v= {{mock}}
+    console.log(v)
+    start(v)
+    function start(questions) {
+        let l = questions.length;
+        console.log("Start")
+        //console.log(l)
+        let op1 = document.getElementById('option1')
+        let op2 = document.getElementById('option2')
+        let op3 = document.getElementById('option3')
+        let op4 = document.getElementById('option4')
+        let q_no = document.getElementById('qno')
+        let options_class = document.getElementsByClassName('option')
+        let q = document.getElementById('q-contain')
+        let next = document.getElementById('next')
+        let prev = document.getElementById('prev')
+        let up = document.getElementById('up')
+        let down = document.getElementById('down')
+        let correct = document.getElementById('correct')
+        let wrong = document.getElementById('wrong')
+        let na = document.getElementById('na')
+
+
+        let store = [], currIndex = 0;
+        store={{info}}
+        
+        
+            
+        // Creating side bar buttons dynamically
+        for (var ij = 1; ij <= l; ij++) {
+
+            var button_id = ij.toString();
+            var button = document.createElement('button');
+            button.type = 'button';
+            button.innerHTML = ij;
+            button.className = 'question_no_sidebar';
+            button.id = button_id;
+
+            var sidebar_element = document.getElementById('sidebar_id')
+            sidebar_element.appendChild(button);
+            if (ij == l) {
+                var question_no_sidebar = document.getElementsByClassName('question_no_sidebar');
+                side_color();
+                reset_color();
+                showQuestion(questions[currIndex],currIndex);
+            }
+        }
+
+        function side_color()
+        {
+            down.innerText = l*4;
+            var c=0;
+            var w=0;
+            var n=0;
+            for(let i=0;i<l;i++)
+            {
+                console.log(store[i]);
+                console.log(questions[i].answer)
+                if(store[i]==-1)
+                {
+                    question_no_sidebar[i].style.color = 'black';
+                    question_no_sidebar[i].style.backgroundColor = 'cyan';
+                    n++;
+                }
+                else if(store[i]==questions[i].answer)
+                {
+                    question_no_sidebar[i].style.color = 'green';
+                    question_no_sidebar[i].style.backgroundColor = 'rgb(100 228 89)';
+                    c++;
+                }
+                else{
+                    question_no_sidebar[i].style.color = 'white';
+                    question_no_sidebar[i].style.backgroundColor = 'red';
+                    w++;
+                }
+            }
+             up.innerText = c*4;
+             correct.innerText = c;
+             wrong.innerText = w;
+             na.innerText = n;
+
+        }
+
+        let side_parent = document.querySelector('#sidebar_id')
+        side_parent.addEventListener("click", side_color_change, false)
+        function side_color_change(e) {
+            if (e.target != e.currentTarget) {
+                console.log(e.target.id);
+                currIndex = e.target.id - '0';
+                currIndex--;
+                reset_color();
+                showQuestion(questions[currIndex],currIndex);
+            }
+        }
+
+        function reset_color()
+        {
+            for(let i=0;i<4;i++)
+            {
+                options_class[i].style.backgroundColor = 'rgba(178, 78, 236, 0.356)';
+                options_class[i].style.color = 'rgb(20, 10, 29)';
+            }
+        }
+
+        function showQuestion(quest,currIndex) {
+            q.innerText = quest.question
+            op1.innerText = quest.choice1
+            op2.innerText = quest.choice2
+            op3.innerText = quest.choice3
+            op4.innerText = quest.choice4
+            q_no.innerText = "( "+ (currIndex + 1) +" ) ";
+            console.log(options_class)
+            reset_color()
+            if(store[currIndex]==(quest.answer) || store[currIndex]==-1 )
+            {
+                console.log("hi");
+                console.log(store[currIndex]-1);
+                options_class[quest.answer-1].style.backgroundColor = 'green';
+                options_class[quest.answer-1].style.color = 'white';
+            }
+            else{
+                console.log("bye");
+                console.log(store[currIndex]);
+                console.log((quest.answer)-1);
+                console.log((quest.answer)-1);
+                options_class[store[currIndex]].style.backgroundColor = 'red';
+                options_class[store[currIndex]].style.color = 'white';
+                options_class[(quest.answer)-1].style.backgroundColor = 'green';
+                options_class[(quest.answer)-1].style.color = 'white';
+            }
+        }
+
+        next.addEventListener('click', function run() {
+            if (currIndex < l - 1) {
+                currIndex++;
+            }
+            else{
+                currIndex=0;
+            }
+            showQuestion(questions[currIndex],currIndex)
+        });
+        prev.addEventListener('click', function run() {
+            if (currIndex > 0) {
+                currIndex--;
+            }
+            else{
+                currIndex=l-1;
+            }
+            showQuestion(questions[currIndex],currIndex);
+        });
+
+    }
+</script>
