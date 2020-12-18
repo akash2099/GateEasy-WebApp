@@ -627,27 +627,6 @@
             options_class[coount].style.color = 'white'
         }
 
-
-        function submit_it() {
-            let correct = 0, wrong = 0, unanswered = 0;
-            for (let index = 0; index < l; index++) {
-                if (store[index] != -1 && store[index] + 1 == questions[index].answer) {
-                    correct++;
-                }
-                else if (store[index] != -1 && store[index] + 1 != questions[index].answer) {
-                    wrong++;
-                }
-                else
-                    unanswered++;
-            }
-            //console.log(correct)
-            //console.log(wrong)
-            //console.log(unanswered)
-            remove_sidebar_button_color();
-            sessionStorage.clear();
-            result(correct, wrong, unanswered);
-
-        }
         save.addEventListener('click', function run() {
             var answer_ques = 0;
             for (let index = 0; index < answered.length; index++) {
@@ -692,56 +671,34 @@
             reset_color()
         });
 
-        function remove_sidebar_button_color() {
-            let side=document.getElementById("sidebar_id")
-            side.remove();
-            let nxt=document.getElementById("nxt-prev")
-            nxt.remove();
-            let time=document.getElementById("Timer")
-            time.remove();
-            let atmp=document.getElementById("attempt")
-            atmp.remove();
-            let qn=document.getElementById("question")
-            qn.style.width = "400px";
-            qn.style.height = "200px";
-
-        }
-        function remove_up() {
-            let side=document.getElementById("sidebar_id")
-            side.remove();
-            let nxt=document.getElementById("nxt-prev")
-            nxt.remove();
-            let time=document.getElementById("Timer")
-            time.remove();
-            let atmp=document.getElementById("attempt")
-            atmp.remove();
-            let ky=document.getElementById("keys")
-            ky.remove();
-            let sb=document.getElementById("submit")
-            sb.remove();
-            reset.style.display="block";
-        }
-
         submit.addEventListener('click', function run() {
-            submit_it();
-        });
+            let data = JSON.stringify({"save": store});
 
-        function result(c, w, u) {
-            op1.innerText = "Total Questions : " + (c + w + u);
-            op2.innerText = "Correct : " + c;
-            op3.innerText = "Wrong : " + w;
-            op4.innerText = "Unanswered: " + u;
-            q_no.innerText = "";
-            q.innerText = "RESULT OVERVIEW"
-            sessionStorage.setItem('end', JSON.stringify(1));
-            reset_color();
-            prev.remove();
-            next.remove();
-            save.remove();
-            clear.remove();
-            submit.remove();
-            remaining_time = Math.floor(0);
-            reset.style.display="block";
+            let csrftoken = getCookie('csrftoken');
+            let response = fetch("result/", {
+                method: "POST",
+                body: data,
+                headers: { 'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                    "X-CSRFToken": csrftoken },
+            })
+            sessionStorage.clear();
+            window.close()
+            window.open('/mech/practise-mock/{{info.id}}/result', '_blank');
+        });
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
         }
 
     }
