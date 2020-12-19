@@ -410,7 +410,7 @@
         let down = document.getElementById('down')
 
 
-
+        let answered = [0, 0, 0, 0]
         let store = [], currIndex = 0, remaining_time = Exam_Time;
 
         let time = sessionStorage.getItem('time') ? JSON.parse(sessionStorage.getItem('time')) : 0;
@@ -537,7 +537,7 @@
         }
 
 
-        let answered = [0, 0, 0, 0]
+       
 
         function showQuestion(quest) {
             q.innerText = quest.question
@@ -546,10 +546,13 @@
             op3.innerText = quest.choice3
             op4.innerText = quest.choice4
             q_no.innerText = "( "+ (currIndex + 1) +" ) ";
-
+            for(let x=0;x<4;x++) answered[x]=0;
             let selec = currIndex + 1
             console.log(selec);
             let chng = document.getElementById(String(selec));
+            console.log(store[currIndex]);
+
+            console.log("yes");
             if (store[currIndex] != -1) {
                 chng.style.color = 'black';
                 chng.style.backgroundColor = 'rgb(100 228 89)';
