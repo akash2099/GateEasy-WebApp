@@ -471,7 +471,19 @@
             if (--remaining_time < 0) {
                 clearInterval(timer_set);
                 document.getElementById("Timer").innerHTML = "00:00:00";
-                submit_it();
+                
+                let data = JSON.stringify({"save": store});
+                let csrftoken = getCookie('csrftoken');
+                let response = fetch("result/", {
+                    method: "POST",
+                    body: data,
+                    headers: { 'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json',
+                        "X-CSRFToken": csrftoken },
+                })
+                sessionStorage.clear();
+                window.close();
+                window.open('/mech/practise-mock/{{info.id}}/result', '_blank');
             }
 
         }, 1000);
