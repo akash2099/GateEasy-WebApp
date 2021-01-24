@@ -31,6 +31,7 @@
 
 - [**MockTest**](https://github.com/akash2099/GateEasy/tree/main/Pages/MockTest)
   - Main Mock Test
+  ![Screenshot](SS.png)
   
 ## [DjangoProject](https://github.com/akash2099/GateEasy/tree/main/DjangoProject)
   - Contains the Django Project Files and Folders
@@ -42,5 +43,8 @@
 ## [Archive](https://github.com/akash2099/GateEasy/tree/main/Archive)
   - Shall contain older version of GateEasy Project
   
+
+
+![Screenshot](SS.png)
 
 *Thank you*
