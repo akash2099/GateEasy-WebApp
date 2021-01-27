@@ -30,7 +30,8 @@
 
 - [**ListOfMockTest**](https://github.com/akash2099/GateEasy/tree/main/Pages/ListOfMockTest)
    - All the available Mock Tests
-
+   ![Screenshot](mockList.png)
+   
 - [**MockTest**](https://github.com/akash2099/GateEasy/tree/main/Pages/MockTest)
   - Main Mock Test
   ![Screenshot](SS.png)
