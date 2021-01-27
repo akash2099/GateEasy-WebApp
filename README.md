@@ -18,13 +18,15 @@
   - Notes
   - Books
   - Past Question Papers
-  
+  ![Screenshot](departmentalPage.png)
+   
 - [**Home**](https://github.com/akash2099/GateEasy/tree/main/Pages/Home)
   - Login
   - Success Stories
   
  - [**VideoLecture**](https://github.com/akash2099/GateEasy/tree/main/Pages/VideoLecture)
    - Video Lecture Playlists according to syllabus
+    ![Screenshot](videoPage.png)
 
 - [**ListOfMockTest**](https://github.com/akash2099/GateEasy/tree/main/Pages/ListOfMockTest)
    - All the available Mock Tests
