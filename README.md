@@ -13,17 +13,17 @@
 
 ## [Pages](https://github.com/akash2099/GateEasy/tree/main/Pages)
 
+- [**Home**](https://github.com/akash2099/GateEasy/tree/main/Pages/Home)
+  - Login
+  - Success Stories
+
 - [**Department_SyllabusNotesBooksQuestionsContacts**](https://github.com/akash2099/GateEasy/tree/main/Pages/Department_SyllabusNotesBooksQuestionsContacts)
   - Syllabus
   - Notes
   - Books
   - Past Question Papers
   ![Screenshot](departmentalPage.png)
-   
-- [**Home**](https://github.com/akash2099/GateEasy/tree/main/Pages/Home)
-  - Login
-  - Success Stories
-  
+     
  - [**VideoLecture**](https://github.com/akash2099/GateEasy/tree/main/Pages/VideoLecture)
    - Video Lecture Playlists according to syllabus
     ![Screenshot](videoPage.png)
