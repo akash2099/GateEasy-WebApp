@@ -1,7 +1,6 @@
 
-# Check out the Demo Deploment here: ( https://gate-easy-nit.herokuapp.com/ ) 
-# Note:  Register as Computer Science Student and Do Check the Video and Mock Test Page : )
-
+# Check out the Demo Deploment here: https://gate-easy-nit.herokuapp.com/
+### Note:  Register as Computer Science Student and Do Check the Video and Mock Test Page : )
 
 # GateEasy :tophat:
 ### An online platform for gate aspirants.
